@@ -15,10 +15,15 @@ int check_cycle(listint_t *list)
 		return(1);
 	while (aux2 != NULL)
 	{
-		if (aux2 > aux1)
-			return (1);
-		aux2 = aux2->next;
 		aux1 = aux1->next;
+		aux2 = aux2->next;
+		if (aux2 != NULL)
+			aux2 = aux2->next;
+		else
+			return (0);
+
+		if (aux1 == aux2)
+			return(1);
 	}
 	return (0);
 }
