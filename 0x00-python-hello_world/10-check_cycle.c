@@ -6,11 +6,12 @@
  */
 int check_cycle(listint_t *list)
 {
+	if (list == NULL)
+		return (0);
+
 	listint_t *aux1 = list;
 	listint_t *aux2 = list->next;
 
-	if (aux1 == NULL)
-		return (0);
 	if (aux2 == aux1)
 		return(1);
 	while (aux2 != NULL)
