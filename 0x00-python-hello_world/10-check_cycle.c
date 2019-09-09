@@ -9,9 +9,10 @@ int check_cycle(listint_t *list)
 	listint_t *aux1 = list;
 	listint_t *aux2 = list->next;
 
+	if (list == NULL)
+		return (0);
 	if (aux2 == aux1)
 		return(1);
-
 	while (aux2 != NULL)
 	{
 		if (aux2 > aux1)
