@@ -6,25 +6,21 @@
  */
 int check_cycle(listint_t *list)
 {
-	if (list == NULL)
-		return (0);
-
 	listint_t *aux1 = list;
 	listint_t *aux2 = list->next;
 
-	if (aux2 == aux1)
-		return (1);
+	if (aux1 == NULL)
+		return (0);
 	while (aux2 != NULL)
 	{
+		if (aux1 == aux2)
+			return (1);
 		aux1 = aux1->next;
 		aux2 = aux2->next;
 		if (aux2 != NULL)
 			aux2 = aux2->next;
 		else
 			return (0);
-		if (aux1 == aux2)
-			return (1);
-
 	}
 	return (0);
 }
