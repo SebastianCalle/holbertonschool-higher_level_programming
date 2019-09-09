@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 	listint_t *aux2 = list->next;
 
 	if (aux2 == aux1)
-		return(1);
+		return (1);
 	while (aux2 != NULL)
 	{
 		aux1 = aux1->next;
@@ -23,7 +23,7 @@ int check_cycle(listint_t *list)
 		else
 			return (0);
 		if (aux1 == aux2)
-			return(1);
+			return (1);
 
 	}
 	return (0);
