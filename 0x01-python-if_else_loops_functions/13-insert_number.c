@@ -10,7 +10,7 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *aux1, *aux2, *new;
 
-	new = malloc(sizeof(int));
+	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
 	aux1 = *head;
@@ -18,8 +18,8 @@ listint_t *insert_node(listint_t **head, int number)
 	if (head == NULL)
 	{
 		new->n = number;
-		aux1->next = new;
-		new->next = aux2;
+		*head = new;
+		new->next = NULL;
 		return (new);
 	}
 
@@ -36,5 +36,8 @@ listint_t *insert_node(listint_t **head, int number)
 		aux1 = aux1->next;
 		aux2 = aux2->next;
 	}
-	return (NULL);
+	new->n = number;
+	aux1->next = new;
+	new->next = NULL;
+	return (new);
 }
