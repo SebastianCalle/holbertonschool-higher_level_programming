@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000,
     }
-    if roman_string is None:
+    if roman_string is None or type(roman_string) != str:
         return 0
     for letter in roman_string:
         if letter in num_roman:
