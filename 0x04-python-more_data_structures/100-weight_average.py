@@ -16,5 +16,3 @@ def weight_average(my_list=[]):
             i += 2
         return suma / div
     return 0
-
-
