@@ -12,10 +12,10 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000,
     }
-    for letter  in roman_string:
-        if letter in num_roman:
-            continue
-        else:
+    if roman_string is None:
+        return 0
+    for letter in roman_string:
+        if letter is not num_roman:
             return 0
     size = len(roman_string)
     i = 0
@@ -36,4 +36,3 @@ def roman_to_int(roman_string):
             suma += num1
             i += 1
     return suma
-
