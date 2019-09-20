@@ -15,7 +15,9 @@ def roman_to_int(roman_string):
     if roman_string is None:
         return 0
     for letter in roman_string:
-        if letter is not num_roman:
+        if letter in num_roman:
+            continue
+        else:
             return 0
     size = len(roman_string)
     i = 0
