@@ -3,19 +3,18 @@
 
 # function that divides element by element 2 lists
 def list_division(my_list_1, my_list_2, list_length):
-    length = []
+    new_list = []
     for i in range(0, list_length):
         try:
-            length.append(my_list_1[i] / my_list_2[i])
+            result = 0
+            result = my_list_1[i] / my_list_2[i]
         except (ZeroDivisionError):
             print("division by 0")
-            length.append(0)
         except TypeError:
             print("wrong type")
-            length.append(0)
         except IndexError:
             print("out of range")
-            length.append(0)
+        finally:
+            new_list.append(result)
 
-    return length
-
+    return new_list
