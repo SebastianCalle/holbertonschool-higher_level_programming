@@ -48,8 +48,10 @@ class Square:
     @position.setter
     def position(self, value):
         """Print space in position"""
+        if len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
         for i in range(0, len(value)):
-            if (i >= 2 or type(value[i]) is not int or
+            if (type(value[i]) is not int or
                     value[i] < 0 or type(value) is not tuple):
                 raise TypeError("position must be a tuple"
                                 " of 2 positive integers")
