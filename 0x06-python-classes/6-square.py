@@ -19,7 +19,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-        return self.__size
 
     def area(self):
         """Calculate area of square"""
@@ -29,6 +28,8 @@ class Square:
         """Print a square whit character #"""
         pos = self.__position[1]
         if pos > 0:
+            for i in range(pos):
+                print("")
             pos = 0
         if self.__size == 0:
             print("")
@@ -53,4 +54,3 @@ class Square:
                 raise TypeError("position must be a tuple"
                                 " of 2 positive integers")
         self.__position = value
-        return self.__position
