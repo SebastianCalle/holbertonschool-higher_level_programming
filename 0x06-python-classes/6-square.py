@@ -3,9 +3,8 @@ class Square:
     """Square object"""
     def __init__(self, size=0, position=(0, 0)):
         """Inizializate class"""
-        self.__size = size
-        self.__position = position
-        
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -49,10 +48,9 @@ class Square:
     def position(self, value):
         """Print space in position"""
         for i in range(0, len(value)):
-            if i > 2 or type(value[i]) is not int:
-                raise TypeError("position must be a tuple of 2 positive integers")
+            if (i >= 2 or type(value[i]) is not int or
+                    value[i] < 0 or type(value) is not tuple):
+                raise TypeError("position must be a tuple"
+                                " of 2 positive integers")
         self.__position = value
         return self.__position
-
-
-
