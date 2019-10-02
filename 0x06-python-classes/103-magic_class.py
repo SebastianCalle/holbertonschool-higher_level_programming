@@ -19,4 +19,3 @@ class MagicClass:
     def circumference(self):
         """Return circumference"""
         return (2 * math.pi * self.__radius)
-
