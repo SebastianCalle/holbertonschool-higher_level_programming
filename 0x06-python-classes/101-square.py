@@ -10,19 +10,21 @@ class Square:
         """Print a square whit character #"""
         pos = self.__position[1]
         p = []
-        if pos > 0:
-            for i in range(pos):
-                p.append('\n')
-            pos = 0
         if self.__size == 0:
-            return "\n"
-        for i in range(0, self.__size):
-            for j in range(0, self.__size):
-                if j == pos:
-                    p.append(" " * self.__position[0])
-                p.append("#")
-            p.append('\n')
-        p.pop()
+            return ("".join(p))
+        else:
+            if pos > 0:
+                for i in range(pos):
+                    p.append('\n')
+                pos = 0
+
+            for i in range(0, self.__size):
+                for j in range(0, self.__size):
+                    if j == pos:
+                        p.append(" " * self.__position[0])
+                    p.append("#")
+                p.append('\n')
+            p.pop()
 
         return ("".join(p))
 
