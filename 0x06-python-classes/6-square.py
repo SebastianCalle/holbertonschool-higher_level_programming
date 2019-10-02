@@ -27,18 +27,20 @@ class Square:
     def my_print(self):
         """Print a square whit character #"""
         pos = self.__position[1]
-        if pos > 0:
-            for i in range(pos):
-                print("")
-            pos = 0
         if self.__size == 0:
             print("")
-        for i in range(0, self.__size):
-            for j in range(0, self.__size):
-                if j == pos:
-                    print(" " * self.__position[0], end="")
-                print("#", end="")
-            print("")
+        else:
+            if pos > 0:
+                for i in range(pos):
+                    print("")
+                pos = 0
+
+            for i in range(0, self.__size):
+                for j in range(0, self.__size):
+                    if j == pos:
+                        print(" " * self.__position[0], end="")
+                    print("#", end="")
+                print("")
 
     @property
     def position(self):
