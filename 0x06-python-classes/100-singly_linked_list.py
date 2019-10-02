@@ -33,9 +33,9 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """class for a SinglyLinkedList"""
-
     def __init__(self):
         """Initializate atributtes"""
         self.__head = None
