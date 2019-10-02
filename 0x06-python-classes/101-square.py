@@ -6,7 +6,7 @@ class Square:
         self.size = size
         self.position = position
 
-    def __str__(self):
+    def __repr__(self):
         """Print a square whit character #"""
         pos = self.__position[1]
         p = []
