@@ -18,7 +18,7 @@ class Node:
     def data(self, value):
         """Logic of correct values for data"""
         if type(value) is not int:
-            raise TypeError("data nust be an integer")
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
