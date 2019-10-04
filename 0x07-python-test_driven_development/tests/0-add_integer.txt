@@ -18,6 +18,18 @@ The "add_integer" module
 0
 >>> add_integer(.3)
 98
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(int('inf'))
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'inf'
+>>> add_integer(2, int('inf'))
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'inf'
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer

@@ -4,6 +4,8 @@
     a must be an integer or float
     b must be an integer or float
 """
+
+
 def add_integer(a, b=98):
     """
     function that return the add
