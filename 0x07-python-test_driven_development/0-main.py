@@ -19,10 +19,10 @@ try:
 except Exception as e:
     print(e)
 try:
-    print(add_integer([1,2]))
+    print(add_integer([1, 2]))
 except Exception as e:
     print(e)
 try:
-    print(add_integer(2, [2,3]))
+    print(add_integer(2, [2, 3]))
 except Exception as e:
     print(e)
