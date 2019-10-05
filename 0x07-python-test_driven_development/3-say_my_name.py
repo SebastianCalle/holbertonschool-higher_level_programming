@@ -8,7 +8,7 @@
 
 def say_my_name(first_name, last_name=""):
     """print My name is ...
-        first name secod name 
+        first name secod name
     """
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")
