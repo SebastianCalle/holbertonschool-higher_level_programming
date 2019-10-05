@@ -12,6 +12,10 @@ class TestMaxInteger(unittest.TestCase):
         """test max integer positiv"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
+    def test_max_middle(self):
+        """test max integer positiv"""
+        self.assertEqual(max_integer([1, 2, 3, 2, 1]), 3)
+
     def test_max_integer_negative(self):
         """test max integer negative"""
         self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
@@ -32,5 +36,12 @@ class TestMaxInteger(unittest.TestCase):
         """test max characters"""
         self.assertEqual(max_integer([]), None)
 
+    def test_if_list_one_element(self):
+        """test max characters"""
+        self.assertEqual(max_integer([1]), 1)
+
+    def test_exception(self):
+        self.assertRaises(TypeError, max_integer, ["a", "h", 2],
+                          msg="unorderable types: str() > int()")
 if __name__ == '__main__':
     unittest.main()
