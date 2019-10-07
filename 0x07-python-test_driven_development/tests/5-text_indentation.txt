@@ -1,0 +1,19 @@
+'' Doctest module intentation text'' 
+==================================== 
+ 
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("        Hello World.")
+Hello World.
+>>> text_indentation("Hello World.    how are you?")
+Hello World.
+<BLANKLINE>
+how are you?
+>>> text_indentation("Hello World.    how are you?           fine")
+Hello World.
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+fine
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
