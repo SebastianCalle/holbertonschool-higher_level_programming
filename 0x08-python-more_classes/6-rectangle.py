@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 class Rectangle:
     """class Rectangle"""
+
+    number_of_instances = 0
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """str method"""
@@ -62,4 +65,5 @@ class Rectangle:
 
     def __del__(self):
         """Destructure method"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
