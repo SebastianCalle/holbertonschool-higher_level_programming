@@ -32,3 +32,12 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    def area(self):
+        """Calculate area of Rectangle"""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Calculate perimeter of Rectangle"""
+        perimeter = 2 * (self.__height + self.__width)
+        return perimeter
