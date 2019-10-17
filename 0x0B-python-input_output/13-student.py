@@ -31,4 +31,3 @@ class Student:
         keys = list(json.keys())
         for key in keys:
             dict1[key] = json.get(key)
-
