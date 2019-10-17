@@ -21,6 +21,8 @@ class Student:
             for key in attrs:
                 if key in dict1:
                     dict2[key] = dict1.get(key)
+                else:
+                    return dict1
             return dict2
         else:
             return dict1
