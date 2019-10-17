@@ -17,12 +17,10 @@ class Student:
         """Method to json"""
         dict1 = self.__dict__
         dict2 = {}
-        if attrs:
+        if type(attrs) is list:
             for key in attrs:
                 if key in dict1:
                     dict2[key] = dict1.get(key)
-                else:
-                    return dict1
             return dict2
         else:
             return dict1
