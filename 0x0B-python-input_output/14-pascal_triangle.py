@@ -15,7 +15,7 @@ def pascal_triangle(n):
                     op.append(1)
                 else:
                     op.append(line[j][i] +
-                                     line[j][i + 1])
+                              line[j][i + 1])
                 i += 1
             op.append(1)
             line.append(op)
