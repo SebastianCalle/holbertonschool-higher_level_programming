@@ -116,3 +116,15 @@ class Rectangle(Base):
                     self.y = value
                 elif key == 'id':
                     self.id = value
+
+    def to_dictionary(self):
+        """Return dictionary attributes"""
+        dict1 = self.__dict__
+        dict2 = {}
+        dict2['x'] = dict1['_Rectangle__x']
+        dict2['y'] = dict1['_Rectangle__y']
+        dict2['id'] = dict1['id']
+        dict2['height'] = dict1['_Rectangle__height']
+        dict2['width'] = dict1['_Rectangle__width']
+
+        return dict2
