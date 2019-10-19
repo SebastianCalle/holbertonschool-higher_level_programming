@@ -121,10 +121,10 @@ class Rectangle(Base):
         """Return dictionary attributes"""
         dict1 = self.__dict__
         dict2 = {}
-        dict2['x'] = dict1['_Rectangle__x']
         dict2['y'] = dict1['_Rectangle__y']
+        dict2['x'] = dict1['_Rectangle__x']
         dict2['id'] = dict1['id']
-        dict2['height'] = dict1['_Rectangle__height']
         dict2['width'] = dict1['_Rectangle__width']
+        dict2['height'] = dict1['_Rectangle__height']
 
         return dict2

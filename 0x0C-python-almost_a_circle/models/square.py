@@ -53,7 +53,6 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Return dictionary of attributes"""
         dict1 = self.__dict__
-        print(dict1)
         dict2 = {}
         dict2['id'] = dict1['id']
         dict2['size'] = dict1['_Square__size']
