@@ -32,6 +32,18 @@ class Base:
             return string
 
     @classmethod
+    def create(cls, **dictionary):
+        """Create an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            new_i = cls(1,1)
+            new_i.update(**dictionary)
+            print(new_i)
+        if cls.__name__ == 'Square':
+            new_i = cls(1)
+
+        return new_i
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation"""
         if list_objs:

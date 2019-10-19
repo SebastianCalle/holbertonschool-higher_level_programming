@@ -92,7 +92,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Update class Rectangle"""
-        if args:
+        if args and len(args) > 1:
             for i in range(0, len(args)):
                 if i == 0:
                     self.id = args[i]
@@ -104,7 +104,7 @@ class Rectangle(Base):
                     self.x = args[i]
                 elif i == 4:
                     self.y = args[i]
-        else:
+        elif kwargs and args is not None:
             for key, value in kwargs.items():
                 if key == 'width':
                     self.width = value
