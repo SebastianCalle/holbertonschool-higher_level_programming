@@ -49,3 +49,15 @@ class Square(Rectangle):
                     self.y = value
                 elif key == 'id':
                     self.id = value
+
+    def to_dictionary(self):
+        """Return dictionary of attributes"""
+        dict1 = self.__dict__
+        print(dict1)
+        dict2 = {}
+        dict2['id'] = dict1['id']
+        dict2['size'] = dict1['_Square__size']
+        dict2['x'] = dict1['_Rectangle__x']
+        dict2['y'] = dict1['_Rectangle__y']
+
+        return dict2
