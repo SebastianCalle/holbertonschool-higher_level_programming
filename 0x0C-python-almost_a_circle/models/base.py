@@ -11,6 +11,16 @@ class Base:
     __nb_objects = 0
 
     @staticmethod
+    def from_json_string(json_string):
+        """return a list from JSON string"""
+        list_obj = []
+        if json_string is None or json_string == "":
+            return list_obj
+        else:
+            list_obj = json.loads(json_string) 
+            return list_obj
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """return JSON representation"""
         if not isinstance(
