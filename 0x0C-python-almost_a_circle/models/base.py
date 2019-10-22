@@ -4,7 +4,6 @@ class Base
 """
 import json
 import os.path
-from csv import DictReader, DictWriter
 
 
 class Base:
