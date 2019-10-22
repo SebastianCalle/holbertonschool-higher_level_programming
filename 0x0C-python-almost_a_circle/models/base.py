@@ -4,7 +4,7 @@ class Base
 """
 import json
 import os.path
-
+import csv
 
 class Base:
     """
@@ -116,8 +116,8 @@ class Base:
             header = ['id', 'size', 'x', 'y']
         if list_objs:
             with open(filename, 'w') as f:
-                csv_w = DictWriter(f, fieldnames=header)
-                csv_w = DictWriter(f, fieldnames=header)
+                csv_w = csv.DictWriter(f, fieldnames=header)
+                csv_w = csv.DictWriter(f, fieldnames=header)
                 csv_w.writeheader()
                 for obj in list_objs:
                     dict1 = obj.to_dictionary()
@@ -138,7 +138,7 @@ class Base:
         if os.path.isfile(filename):
             dict2 = {}
             with open(filename, 'r') as f:
-                csv_r = DictReader(f)
+                csv_r = csv.DictReader(f)
                 for row in csv_r:
                     for key, value in row.items():
                         dict2[key] = int(value)
