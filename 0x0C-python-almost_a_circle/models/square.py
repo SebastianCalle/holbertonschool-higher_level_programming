@@ -1,34 +1,49 @@
 #!/usr/bin/python3
 
 from .rectangle import Rectangle
-"""import models"""
+"""
+import models
+"""
 
 
 class Square(Rectangle):
-    """Class Square"""
+    """
+    Class Square
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        Initializate attributes
+        """
         super().__init__(id=id, x=x, y=y, width=size, height=size)
         self.size = size
 
     def __str__(self):
-        """Return string"""
+        """
+        Return string
+        """
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                   self.width))
 
     @property
     def size(self):
-        """Return private attribute"""
+        """
+        Return private attribute
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        """Setter size attribute"""
+        """
+        Setter size attribute
+        """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """Update class Square"""
+        """
+        Update class Square
+        """
         if args and args is not None:
             for i in range(0, len(args)):
                 if i == 0:
@@ -51,7 +66,9 @@ class Square(Rectangle):
                     self.id = value
 
     def to_dictionary(self):
-        """Return dictionary of attributes"""
+        """
+        Return dictionary of attributes
+        """
         dict1 = self.__dict__
         dict2 = {}
         dict2['id'] = dict1['id']

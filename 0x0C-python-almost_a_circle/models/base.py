@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-class Base
+    class Base
 """
 import json
 import os.path
@@ -12,13 +12,15 @@ Base of the modules
 
 class Base:
     """
-    Class Base
+        Class Base
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializate attributes"""
+        """
+        Initializate attributes
+        """
         if id is not None:
             self.id = id
         else:
@@ -27,7 +29,9 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """return a list from JSON string"""
+        """
+        return a list from JSON string
+        """
         list_obj = []
         if json_string is None or json_string == "":
             return list_obj
@@ -37,7 +41,9 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """return JSON representation"""
+        """
+        return JSON representation
+        """
         if not isinstance(
                 list_dictionaries,
                 list) and list_dictionaries is None:
@@ -48,7 +54,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Create an instance with all attributes already set"""
+        """
+        Create an instance with all attributes already set
+        """
         if cls.__name__ == 'Rectangle':
             new_i = cls(1, 1)
             new_i.update(**dictionary)
@@ -60,7 +68,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation"""
+        """
+        Writes the JSON string representation
+        """
         if list_objs:
             list_d = []
             for obj in list_objs:
@@ -77,7 +87,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of instances"""
+        """
+        Return a list of instances
+        """
         li = []
         new_li = []
         if cls.__name__ == 'Rectangle':
@@ -97,7 +109,9 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Save in a csv file"""
+        """
+        Save in a csv file
+        """
         if cls.__name__ == 'Rectangle':
             filename = 'Rectangle.csv'
             header = ['id', 'width', 'height', 'x', 'y']
@@ -116,7 +130,9 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Return a list of instances"""
+        """
+        Return a list of instances
+        """
         li = []
         new_li = []
         if cls.__name__ == 'Rectangle':
