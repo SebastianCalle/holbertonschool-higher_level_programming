@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 
+"""
+Module Python
+"""
 import json
 import os.path
 from csv import DictReader, DictWriter
-"""Module Python"""
-"""Base of the modules"""
+"""
+Base of the modules
+"""
 
 
 class Base:
-    """Class Base"""
+    """
+    Class Base
+    """
 
     __nb_objects = 0
 
