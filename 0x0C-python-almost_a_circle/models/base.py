@@ -41,11 +41,7 @@ class Base:
         """
         return JSON representation
         """
-        if not isinstance(
-                list_dictionaries,
-                list) and list_dictionaries is None:
-            return "[]"
-        if len(list_dictionaries) < 1:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             string = json.dumps(list_dictionaries)
