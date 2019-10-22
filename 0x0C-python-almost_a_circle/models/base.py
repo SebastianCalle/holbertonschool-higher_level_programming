@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
-    class Base
+class Base
 """
 import json
 import os.path
 from csv import DictReader, DictWriter
-"""
-Base of the modules
-"""
 
 
 class Base:
@@ -18,9 +15,6 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Initializate attributes
-        """
         if id is not None:
             self.id = id
         else:
