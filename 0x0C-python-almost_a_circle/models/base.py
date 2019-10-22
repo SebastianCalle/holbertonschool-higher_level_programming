@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
 """
-Module Python
+class Base
 """
 import json
 import os.path
