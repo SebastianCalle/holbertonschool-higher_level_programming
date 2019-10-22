@@ -12,7 +12,6 @@ class Base:
 
     __nb_objects = 0
 
-
     @staticmethod
     def from_json_string(json_string):
         """return a list from JSON string"""
@@ -20,7 +19,7 @@ class Base:
         if json_string is None or json_string == "":
             return list_obj
         else:
-            list_obj = json.loads(json_string) 
+            list_obj = json.loads(json_string)
             return list_obj
 
     @staticmethod
@@ -38,7 +37,7 @@ class Base:
     def create(cls, **dictionary):
         """Create an instance with all attributes already set"""
         if cls.__name__ == 'Rectangle':
-            new_i = cls(1,1)
+            new_i = cls(1, 1)
             new_i.update(**dictionary)
         if cls.__name__ == 'Square':
             new_i = cls(1)
@@ -54,14 +53,14 @@ class Base:
             for obj in list_objs:
                 if isinstance(obj, cls):
                     with open(cls.__name__ + '.json', 'w') as f:
-                            dict1 = obj.to_dictionary()
-                            list_d.append(dict1)
-                            data = cls.to_json_string(list_d)
-                            f.write(data)
-        else:
-                with open(cls.__name__ + '.json', 'w') as f:
-                        data = cls.to_json_string(list_objs)
+                        dict1 = obj.to_dictionary()
+                        list_d.append(dict1)
+                        data = cls.to_json_string(list_d)
                         f.write(data)
+        else:
+            with open(cls.__name__ + '.json', 'w') as f:
+                data = cls.to_json_string(list_objs)
+                f.write(data)
 
     @classmethod
     def load_from_file(cls):
@@ -101,6 +100,7 @@ class Base:
                     dict1 = obj.to_dictionary()
                     if isinstance(obj, cls):
                         csv_w.writerow(dict1)
+
     @classmethod
     def load_from_file_csv(cls):
         """Return a list of instances"""
@@ -122,7 +122,6 @@ class Base:
         else:
             return li
 
-
     def __init__(self, id=None):
         """Initializate attributes"""
         if id is not None:
@@ -130,4 +129,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-

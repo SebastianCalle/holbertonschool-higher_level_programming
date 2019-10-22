@@ -3,11 +3,13 @@
 from .rectangle import Rectangle
 """import models"""
 
+
 class Square(Rectangle):
     """Class Square"""
+
     def __init__(self, size, x=0, y=0, id=None):
-        self.__size = size
         super().__init__(id=id, x=x, y=y, width=size, height=size)
+        self.size = size
 
     def __str__(self):
         """Return string"""
@@ -17,7 +19,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """Return private attribute"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -27,7 +29,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update class Square"""
-        if args:
+        if args and args is not None:
             for i in range(0, len(args)):
                 if i == 0:
                     self.id = args[i]
@@ -40,9 +42,7 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 if key == 'size':
-                    self.width = value
-                elif key == 'size':
-                    self.height = value
+                    self.size = value
                 elif key == 'x':
                     self.x = value
                 elif key == 'y':
@@ -55,7 +55,7 @@ class Square(Rectangle):
         dict1 = self.__dict__
         dict2 = {}
         dict2['id'] = dict1['id']
-        dict2['size'] = dict1['_Square__size']
+        dict2['size'] = dict1['_Rectangle__width']
         dict2['x'] = dict1['_Rectangle__x']
         dict2['y'] = dict1['_Rectangle__y']
 
