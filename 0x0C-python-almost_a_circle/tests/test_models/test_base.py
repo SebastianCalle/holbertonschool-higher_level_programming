@@ -2,14 +2,13 @@ from models.base import Base
 import unittest
 
 class Test_base(unittest.TestCase):
-    """Unittest Base class"""
-    b1 = Base()
-    self.assertequal()
-    b2 = Base()
-    print(b2.id)
-    b3 = Base()
-    print(b3.id)
-    b4 = Base(12)
-    print(b4.id)
-    b5 = Base()
-    print(b5.id)
+    """Test for base model"""
+
+    def test_instance(self):
+        b1 = Base()
+        self.assertEqual(1, b1.id)
+        b2 = Base()
+        self.assertEqual(2, b2.id)
+        b3 = Base(7)
+        self.assertEqual(7, b3.id)
+
