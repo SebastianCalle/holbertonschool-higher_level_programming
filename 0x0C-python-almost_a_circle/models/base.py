@@ -38,10 +38,13 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if list_dictionaries is None or len(list_dictionaries) is 0:
-            return json.dumps([])
-        else:
+        """
+        Return JSON string
+        """
+        if list_dictionaries is not None and list_dictionaries:
             return json.dumps(list_dictionaries)
+        else:
+            return "[]"
 
     @classmethod
     def create(cls, **dictionary):
