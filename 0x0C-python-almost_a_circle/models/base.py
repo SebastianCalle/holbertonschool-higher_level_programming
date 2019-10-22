@@ -45,6 +45,8 @@ class Base:
                 list_dictionaries,
                 list) and list_dictionaries is None:
             return "[]"
+        if len(list_dictionaries) < 1:
+            return "[]"
         else:
             string = json.dumps(list_dictionaries)
             return string
