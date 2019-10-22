@@ -41,11 +41,10 @@ class Base:
         """
         return JSON representation
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+        if list_dictionaries is None or len(list_dictionaries) is 0:
+            return json.dumps([])
         else:
-            string = json.dumps(list_dictionaries)
-            return string
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def create(cls, **dictionary):
