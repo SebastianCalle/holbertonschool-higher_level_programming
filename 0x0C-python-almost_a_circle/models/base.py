@@ -9,12 +9,15 @@ from csv import DictReader, DictWriter
 
 class Base:
     """
-        Class Base
+    Class Base
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+    """
+    Initialziate attributes 
+    """
         if id is not None:
             self.id = id
         else:
