@@ -35,7 +35,7 @@ class Base:
         """return JSON representation"""
         if not isinstance(
                 list_dictionaries,
-                list) and list_dictionaries is None or len(list_dictionaries) < 1:
+                list) and list_dictionaries is None:
             return "[]"
         else:
             string = json.dumps(list_dictionaries)
@@ -129,4 +129,3 @@ class Base:
                 return new_li
         else:
             return li
-
