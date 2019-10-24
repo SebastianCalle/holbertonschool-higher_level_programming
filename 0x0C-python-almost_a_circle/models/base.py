@@ -5,6 +5,7 @@ class Base
 import json
 import os.path
 import csv
+import turtle
 
 
 class Base:
@@ -23,6 +24,41 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Drae rectangles and squares"""
+        wn = turtle.Screen()
+        wn.bgcolor("black")
+        tt = turtle.Turtle()
+        tt.color("cyan")
+        tt.shape("turtle")
+
+        for rec in list_rectangles:
+            print(rec)
+            for i in range(2):
+                tt.forward(rec.width)
+                if rec.id % 2 == 0:
+                    tt.right(90)
+                else:
+                    tt.left(90)
+                tt.forward(rec.height)
+                if rec.id % 2 == 0:
+                    tt.right(90)
+                else:
+                    tt.left(90)
+        tt.goto(-100, 0)
+        for squ in list_squares:
+            for i in range(4):
+                print(squ)
+                tt.forward(squ.size)
+                if rec.id % 2 == 0:
+                    tt.right(90)
+                else:
+                    tt.left(90)
+
+        turtle.done()
+
 
     @staticmethod
     def from_json_string(json_string):
