@@ -4,4 +4,8 @@ CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 -- Use database create before
 USE hbtn_0d_usa;
 -- Create table state
-CREATE TABLE IF NOT EXISTS states (id INT AUTO_INCREMET NOT NULL PRIMARY KEY, name VARCHAR(256) NOT NULL));
+CREATE TABLE IF NOT EXISTS states (
+  id INT AUTO_INCREMENT NOT NULL,
+  name VARCHAR(256) NOT NULL,
+  PRIMARY KEY (id)
+);
