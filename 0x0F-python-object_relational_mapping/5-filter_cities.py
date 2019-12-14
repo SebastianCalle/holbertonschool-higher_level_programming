@@ -16,17 +16,17 @@ def print_states():
                          db=argv[3],
                          port=3306)
     val = argv[4]
-    sql = "SELECT cities.name, states.id FROM cities\
+    sql = "SELECT cities.id, cities.name, states.name FROM cities\
            INNER JOIN states ON states.id = cities.state_id\
             WHERE states.name = %s ORDER BY id;"
     cur = db.cursor()
     cur.execute(sql, (val, ))
     rows = cur.fetchall()
-    for i in range(len(rows)):
-        if i == len(rows) - 1:
-            print(rows[i][0])
-        else:
-            print(rows[i][0], end=", ")
+    cities = []
+    for row in rows:
+        cities.append(row[1])
+
+    print(', '.join(cities))
     cur.close()
     db.close()
 
