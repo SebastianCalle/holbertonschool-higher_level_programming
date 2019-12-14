@@ -21,6 +21,8 @@ def print_states():
     rows = cur.fetchall()
     for row in rows:
         print(row)
+    cur.close()
+    db.close()
 
 if __name__ == '__main__':
     print_states()
