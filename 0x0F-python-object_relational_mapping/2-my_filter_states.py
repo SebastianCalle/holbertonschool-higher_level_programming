@@ -16,9 +16,8 @@ def print_states():
                          db=argv[3],
                          port=3306)
     cur = db.cursor()
-    sql = "SELECT * FROM states WHERE name = %s"
-    val = (argv[4], )
-    cur.execute(sql, val)
+    sql = "SELECT * FROM states WHERE name = '{}' ORDER BY id;".format(argv[4])
+    cur.execute(sql)
     rows = cur.fetchall()
     for row in rows:
         print(row)
