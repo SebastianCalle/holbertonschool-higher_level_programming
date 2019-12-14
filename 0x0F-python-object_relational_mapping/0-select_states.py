@@ -5,6 +5,7 @@ Script that lists all states from database
 import MySQLdb
 from sys import argv
 
+
 def print_states():
     """
     Print states of databease order by id
@@ -20,5 +21,5 @@ def print_states():
     for row in rows:
         print(row)
 
-if __name__=='__main__':
+if __name__ == '__main__':
     print_states()
