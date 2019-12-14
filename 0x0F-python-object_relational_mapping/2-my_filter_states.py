@@ -16,11 +16,12 @@ def print_states():
                          db=argv[3],
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id;")
+    sql = "SELECT * FROM states WHERE name = %s"
+    val = (argv[4], )
+    cur.execute(sql, val)
     rows = cur.fetchall()
     for row in rows:
-        if row[1] == argv[4]:
-            print(row)
+        print(row)
     cur.close()
     db.close()
 
