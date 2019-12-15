@@ -5,6 +5,7 @@ import sys
 from model_state import Base, State
 
 import sqlalchemy as db
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = db.create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
@@ -13,12 +14,15 @@ if __name__ == "__main__":
     metadata = db.MetaData()
     state = db.Table('states', metadata, autoload=True, autoload_with=engine)
 
-    query = db.insert(state).values(id=6, name='Louisiana')
-    ResultProxy = conection.execute(query)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    Louisiana = State(name='Louisiana')
+    session.add(Louisiana)
+    session.commit()
 
-    query2 = db.select([state])
-    resul = conection.execute(query2)
+    query = db.select([state])
+    resul = conection.execute(query)
     resulset = resul.fetchall()
     for state in resulset:
         if state[1] == 'Louisiana':
-            print(state[0])
+            print("{}".format(state[0]))
