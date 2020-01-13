@@ -2,6 +2,7 @@
 # Script that takes in a URL, handle error
 
 import urllib.request
+import urllib.error
 import sys
 
 if __name__ == '__main__':
