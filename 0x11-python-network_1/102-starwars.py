@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
     for name in result:
         print(name['name'])
-        for i in range(len(name['films'])):
-            numb = name['films'][i][-2:-1]
-            url = 'https://swapi.co/api/films/{}'.format(numb)
-            r = requests.get(url)
-            print('\t', r.json()['title'])
+        films = name.get('films')
+        for film in films:
+            r = requests.get(film)
+            film = r.json()
+            print("\t{}".format(film.get('title')))
