@@ -9,7 +9,13 @@ if __name__ == "__main__":
     search = sys.argv[1]
     url = 'https://swapi.co/api/people/'
     r = requests.get(url, params={'search': search})
+    data = r.json()
     result = r.json()['results']
     print("Number of results:", r.json()['count'])
+    while data['next'] is not None:
+        r = requests.get(data['next'])
+        data = r.json()
+        result += data['results']
+
     for name in result:
         print(name['name'])
