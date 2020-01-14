@@ -10,15 +10,15 @@ if __name__ == "__main__":
     url = 'https://swapi.co/api/people/'
     r = requests.get(url, params={'search': search})
     data = r.json()
-    result = r.json()['results']
-    print("Number of results:", r.json()['count'])
-    while data['next'] is not None:
-        r = requests.get(data['next'])
+    result = r.json().get('results')
+    print("Number of results:", r.json().get('count'))
+    while data.get('next') is not None:
+        r = requests.get(data.get('next'))
         data = r.json()
-        result += data['results']
+        result += data.get('results')
 
     for name in result:
-        print(name['name'])
+        print(name.get('name'))
         films = name.get('films')
         for film in films:
             r = requests.get(film)
