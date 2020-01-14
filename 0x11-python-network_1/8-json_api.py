@@ -13,9 +13,10 @@ if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
     payload = {'q': q}
     r = requests.post(url, data=payload)
-    if type(r.json()) != dict:
-        print('No a valid JSON')
-    elif r.json().get('id') is None:
-        print('No result')
-    else:
-        print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
+    try:
+        if r.json().get('id') is None:
+            print('No result')
+        else:
+            print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
+    except:
+        print('Not a valid JSON')
