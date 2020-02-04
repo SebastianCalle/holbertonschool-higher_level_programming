@@ -1,8 +1,7 @@
 #!/usr/bin/node
-// Script that verificated if pass arguments
-const args = process.argv.slice(2);
-if (args) {
-  console.log(args[0]);
+// Script that print the first argument
+if (process.argv[2]) {
+  console.log(process.argv[2]);
 } else {
   console.log('No argument');
 }
