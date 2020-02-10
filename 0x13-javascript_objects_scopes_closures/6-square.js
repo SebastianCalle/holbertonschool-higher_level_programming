@@ -9,15 +9,14 @@ module.exports = class Square extends Rectangle {
 
   charPrint (c) {
     if (c ===  undefined) {
-      super.print();
-    } else {
-      for (let i = 0; i < this.size; i++) {
-        let a = '';
-        for (let j = 0; j < this.size; j++) {
-          a += c;
-        }
-        console.log(a);
+      c = 'X';
+    }
+    for (let i = 0; i < this.size; i++) {
+      let a = '';
+      for (let j = 0; j < this.size; j++) {
+        a += c;
       }
+      console.log(a);
     }
   }
 };
