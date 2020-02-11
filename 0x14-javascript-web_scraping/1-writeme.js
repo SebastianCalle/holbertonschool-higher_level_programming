@@ -8,4 +8,3 @@ fs.writeFile(path, string, function (err) {
     console.log(err);
   }
 });
-
