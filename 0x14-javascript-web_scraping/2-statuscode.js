@@ -6,6 +6,6 @@ request(path, function (error, response) {
   if (error) {
     console.error('error:', error);
   } else {
-    console.log('Code:', response && response.statusCode);
+    console.log('Code:', response.statusCode);
   }
 });
