@@ -6,14 +6,16 @@ request(path, function (error, response, body) {
   if (error) {
     console.log('error:', error);
   } else {
-    const character = 'https://swapi.co/api/people/18/';
-    const list = [];
-    const dict = JSON.parse(body);
-    for (const i in dict.results) {
-      if (dict.results[i].characters.includes(character)) {
-        list.push(i);
-      }
-    }
-    console.log(list.length);
+    const list = JSON.parse(body).results;
+    let count = 0;
+    list.forEach(elem => {
+      characters = elem.characters;
+      characters.forEach(item => {
+        if (item.includes('/18')) {
+          count += 1;
+        }
+      });
+    });
+    console.log(count);
   }
 });
