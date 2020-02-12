@@ -6,7 +6,6 @@ request.get(path, function (error, response, body) {
   if (error) {
     console.log('error:', error);
   } else {
-    const request1 = require('request');
     const list = JSON.parse(body).characters;
     list.forEach(elem => {
       request.get(elem, function (error, response, body) {
