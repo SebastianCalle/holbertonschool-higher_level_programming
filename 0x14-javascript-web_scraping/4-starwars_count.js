@@ -9,7 +9,7 @@ request(path, function (error, response, body) {
     const list = JSON.parse(body).results;
     let count = 0;
     list.forEach(elem => {
-      characters = elem.characters;
+      const characters = elem.characters;
       characters.forEach(item => {
         if (item.includes('/18')) {
           count += 1;
