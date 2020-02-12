@@ -12,7 +12,7 @@ request(url, function (error, response, body) {
     list.forEach(elem => {
       if (elem.completed === true) {
         if (dict[elem.userId] === undefined) {
-          dict[elem.userId] = 1
+          dict[elem.userId] = 1;
         } else {
           dict[elem.userId]++;
         }
