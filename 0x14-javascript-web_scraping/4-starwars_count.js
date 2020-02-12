@@ -4,7 +4,7 @@ const request = require('request');
 const path = process.argv[2];
 request(path, function (error, response, body) {
   if (error) {
-    console.error('error:', error);
+    console.log('error:', error);
   } else {
     const character = 'https://swapi.co/api/people/18/';
     const list = [];
